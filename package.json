@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "eslint": "./node_modules/.bin/eslint '**/*.js'",
-    "format": "prettier-eslint '**/*.js'"
+    "eslint": "./node_modules/.bin/eslint '**/*.{js,ts,tsx}'",
+    "eslint:fix": "npm run eslint -- --fix",
+    "format": "prettier-eslint '**/*.{js,ts,tsx}' --write"
   },
   "husky": {
     "hooks": {
@@ -14,8 +15,8 @@
     }
   },
   "lint-staged": {
-    "*.js": [
-      "npm run eslint",
+    "*.(js|jsx|ts|tsx)": [
+      "npm run eslint:fix",
       "npm run format",
       "git add"
     ]
