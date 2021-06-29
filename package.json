@@ -4,9 +4,9 @@
   "description": "test task for skillbox",
   "main": "index.js",
   "scripts": {
-    "test": "npm run eslint && npm run format",
-    "eslint": "./node_modules/.bin/eslint '**/*.js'",
-    "format": "prettier-eslint '**/*.js'"
+    "test": "jest",
+    "eslint": "eslint '**/*.js'",
+    "format": "prettier-eslint '**/*.js' --list-different"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,11 @@
     "eslint": "^7.29.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.4",
+    "jest": "^27.0.6",
     "prettier-eslint": "^12.0.0",
     "prettier-eslint-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1"
   }
 }
