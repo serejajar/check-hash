@@ -48,7 +48,7 @@ test('Wrong link (404)', async () => {
 });
 
 test('Different hash', async () => {
-  const filePath = path.join(__dirname, './mocks/different.txt');
+  const filePath = path.join(__dirname, './mocks/not-equal-hash.txt');
   await copmareHash(filePath);
 
   expect(mockExit).toHaveBeenCalledWith(102);
