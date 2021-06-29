@@ -13,7 +13,7 @@ test('Correct file and hash', async () => {
 });
 
 test('Correct link and hash', async () => {
-  const url = 'https://github.com/serejajar/check-hash/blob/main/mocks/correct.txt';
+  const url = 'https://raw.githubusercontent.com/serejajar/check-hash/main/mocks/correct.txt';
   await copmareHash(url);
 
   expect(mockExit).not.toHaveBeenCalled();
