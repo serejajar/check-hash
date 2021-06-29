@@ -2,19 +2,18 @@ const fs = require('fs');
 const fetch = require('node-fetch');
 
 async function fetchFileFromNet(url) {
-  let response;
+  let file;
 
   try {
-    response = await fetch(url);
+    const result = await fetch(url);
+    if (result && result.status === 200) {
+      file = result.text();
+    }
   } catch (e) {
     // console.log(e);
   }
 
-  if (response && response.status !== 200) {
-    return undefined;
-  }
-
-  return response;
+  return file;
 }
 
 function readFileFromDisk(filePath) {
