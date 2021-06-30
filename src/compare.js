@@ -21,6 +21,7 @@ async function copmareHash(fileArg) {
     if (sumHash.digest('hex') !== hash.trim()) {
       process.exit(102);
     }
+    console.log('Success: file has the same hash');
   }
 }
 
