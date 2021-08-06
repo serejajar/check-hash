@@ -28,12 +28,12 @@ function readFileFromDisk(filePath) {
   return file;
 }
 
-function getFile(pathOrUrl, callback) {
+function getFile(pathOrUrl) {
   const isLink = pathOrUrl.search(/(https?:\/\/[^\s]+)/gi) !== -1;
 
   return isLink
-    ? fetchFileFromNet(pathOrUrl, callback)
-    : readFileFromDisk(pathOrUrl, callback);
+    ? fetchFileFromNet(pathOrUrl)
+    : readFileFromDisk(pathOrUrl);
 }
 
 module.exports = getFile;
